@@ -1,3 +1,4 @@
+console.log(123545);
 $(function() {
     var mobile_flag = isMobile(); // true為手機端，false為電腦端
 
