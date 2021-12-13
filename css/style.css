@@ -110,8 +110,9 @@ h2{
     transform: rotate(-45deg);
     transition: 0.5s ease all;
 
-    animation:fadeInLeft_bg;  /*referring directly to the animation's @keyframe declaration */
-    animation-duration: 0.8s;  /*don't forget to set a duration!*/
+    animation:fadeInLeft_img;  /*referring directly to the animation's @keyframe declaration */
+    animation-duration: 1.3s;  /*don't forget to set a duration!*/
+    animation-timing-function: linear;
   
 }
 
@@ -126,6 +127,10 @@ h2{
     border-radius: 40px;
     transform: rotate(-45deg); 
     transition: 0.5s ease all;
+
+    animation:fadeInLeft_img;  /*referring directly to the animation's @keyframe declaration */
+    animation-duration: 1.3s;  /*don't forget to set a duration!*/
+    animation-timing-function: linear;
 }
 
 .hover-bg-left{
@@ -147,8 +152,7 @@ h2{
     height: 100%;
     border-radius: 40px;
 
-    animation:fadeInLeft_bg;  /*referring directly to the animation's @keyframe declaration */
-    animation-duration: 0.8s;  /*don't forget to set a duration!*/
+    
 }
 .img-content-left::before{
     content: "";
@@ -190,8 +194,9 @@ h2{
     transform: rotate(-45deg);
     transition: 0.5s ease all;
 
-    animation:fadeInRight_bg;  /*referring directly to the animation's @keyframe declaration */
-    animation-duration: 0.8s;  /*don't forget to set a duration!*/
+    animation:fadeInRight_img;  /*referring directly to the animation's @keyframe declaration */
+    animation-duration: 1.3s;  /*don't forget to set a duration!*/
+    animation-timing-function: linear;
 }
 
 .img-right{
@@ -205,6 +210,9 @@ h2{
     border-radius: 40px;
     transform: rotate(-45deg);
     transition: 0.5s ease all;
+    animation:fadeInRight_img;  /*referring directly to the animation's @keyframe declaration */
+    animation-duration: 1.3s;  /*don't forget to set a duration!*/
+    animation-timing-function: linear;
 }
 .hover-bg-right{
 	position: absolute;
@@ -226,8 +234,7 @@ h2{
     width: 100%;
     height: 100%;
     border-radius: 40px;
-    animation:fadeInRight_bg;  /*referring directly to the animation's @keyframe declaration */
-    animation-duration: 0.8s;  /*don't forget to set a duration!*/
+    
 }
 .img-content-right:before{
     content: "";
@@ -432,68 +439,34 @@ canvas{
 
 
 /* 動畫 */
-@keyframes fadeInRight_bg {
-    from {
-      opacity: 0;
-      top: -100%;
-      right: -200%;
-      /* -webkit-transform: translate3d(-100%, 0, 0) rotate(-45deg);
-      transform: translate3d(-100%, 0, 0) rotate(-45deg); */
-    }
-    to {
-      opacity: 1;
-      top: -355px;
-      right: -190px;
-      /* -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
-      transform: translate3d(0, 0, 0) rotate(-45deg); */
-    }
-  }
+
   @keyframes fadeInRight_img {
-    from {
+    0% {
       opacity: 0;
-      top: -100%;
-      right: -200%;
-      /* -webkit-transform: translate3d(-100%, 0, 0) rotate(-45deg);
-      transform: translate3d(-100%, 0, 0) rotate(-45deg); */
+      /* top: -100%; */
+      right: -100%;
+
     }
-    to {
+
+    100% {
       opacity: 1;
-      top: -300px;
-      right: -180px;
-      /* -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
-      transform: translate3d(0, 0, 0) rotate(-45deg); */
+      /* top: -300px;
+      right: -180px; */
+
     }
   }
 
-  @keyframes fadeInLeft_bg {
-    from {
-      opacity: 0;
-      bottom: -100%; 
-      left: -200%;
-      /* -webkit-transform: translate3d(-100%, 0, 0) rotate(-45deg);
-      transform: translate3d(-100%, 0, 0) rotate(-45deg); */
-    }
-    to {
-      opacity: 1;
-      bottom: -355px; 
-      left: -190px;
-      /* -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
-      transform: translate3d(0, 0, 0) rotate(-45deg); */
-    }
-  }
   @keyframes fadeInLeft_img {
-    from {
+    0% {
       opacity: 0;
-      bottom: -100; 
-      left: -200%;
-      /* -webkit-transform: translate3d(-100%, 0, 0) rotate(-45deg);
-      transform: translate3d(-100%, 0, 0) rotate(-45deg); */
+      /* bottom: -100%;  */
+      left: -100%;
+
     }
-    to {
+    100% {
       opacity: 1;
-      bottom: -300px; 
-      left: -180px;
-      /* -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
-      transform: translate3d(0, 0, 0) rotate(-45deg); */
+      /* bottom: -300px; 
+      left: -180px; */
+
     }
   }

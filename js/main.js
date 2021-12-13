@@ -1,7 +1,42 @@
 console.log(123545);
 $(function() {
-    var mobile_flag = isMobile(); // true為手機端，false為電腦端
 
+    setTimeout(function(){hoverImg()}, 2000);
+
+});
+
+
+function isMobile() {
+    var userAgentInfo = navigator.userAgent;
+
+    var mobileAgents = [ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad","iPod"];
+
+    var mobile_flag = false;
+
+    //根据userAgent判断是否是手机
+    // for (var v = 0; v < mobileAgents.length; v++) {
+    //     if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
+    //         mobile_flag = true;
+    //         break;
+    //     }
+    // }
+
+     var screen_width = window.screen.width;
+     var screen_height = window.screen.height;    
+
+     //根据屏幕分辨率判断是否是手机
+     if(screen_width < 500 && screen_height < 800){
+         mobile_flag = true;
+        console.log('mobile');
+     }
+
+     return mobile_flag;
+}
+
+
+function hoverImg(){
+    var mobile_flag = isMobile(); // true為手機端，false為電腦端
+    
     if(mobile_flag==false){//電腦版
     //hover右側區塊
     $(".right-block").hover(function(){
@@ -200,36 +235,4 @@ $(function() {
 
     }
 
-
-
-
-
-});
-
-
-function isMobile() {
-    var userAgentInfo = navigator.userAgent;
-
-    var mobileAgents = [ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad","iPod"];
-
-    var mobile_flag = false;
-
-    //根据userAgent判断是否是手机
-    // for (var v = 0; v < mobileAgents.length; v++) {
-    //     if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
-    //         mobile_flag = true;
-    //         break;
-    //     }
-    // }
-
-     var screen_width = window.screen.width;
-     var screen_height = window.screen.height;    
-
-     //根据屏幕分辨率判断是否是手机
-     if(screen_width < 500 && screen_height < 800){
-         mobile_flag = true;
-        console.log('mobile');
-     }
-
-     return mobile_flag;
 }
