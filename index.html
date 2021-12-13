@@ -77,13 +77,14 @@
         <div class="fake-img">fake loading</div>
     </div>
 
-    <!-- <script src="js/bg.js" ></script> -->
+    <script src="js/bg.js" ></script>
     <script src="js/main.js" ></script>
 </body>
 <script>
 window.onload = () => {
     const loadingScreen = document.getElementById('loading-screen');
     loadingScreen.style.opacity = 0;
+    setTimeout(function(){hoverImg()}, 1250);
 }
 </script>
 

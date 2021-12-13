@@ -433,11 +433,6 @@ canvas{
         display: block;
     }
 }
-
-
-
-
-
 /* 動畫 */
 
   @keyframes fadeInRight_img {
@@ -447,21 +442,17 @@ canvas{
       right: -100%;
 
     }
-
     100% {
       opacity: 1;
       /* top: -300px;
       right: -180px; */
-
     }
   }
-
   @keyframes fadeInLeft_img {
     0% {
       opacity: 0;
       /* bottom: -100%;  */
       left: -100%;
-
     }
     100% {
       opacity: 1;

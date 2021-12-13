@@ -1,9 +1,7 @@
-console.log(123545);
-$(function() {
+// $(function() {
 
-    setTimeout(function(){hoverImg()}, 2000);
-
-});
+//     setTimeout(function(){hoverImg()}, 1250);
+// });
 
 
 function isMobile() {
