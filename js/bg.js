@@ -1,9 +1,9 @@
 var canvas = document.createElement('canvas'),
     width = canvas.width = window.innerWidth,
     height = canvas.height = window.innerHeight,
-    halfWidth = width / 4,
-    halfHeight = height / 4,
-    fov = 1800,
+    halfWidth = width / 2,
+    halfHeight = height / 2,
+    fov = 180,
     offsetX = 0,
     offsetY = 0,
     mouseX = 0,
@@ -13,15 +13,18 @@ var context = canvas.getContext('2d');
 document.body.appendChild(canvas);
 document.body.addEventListener("mousemove", onMouseMove);
 
+console.log(width, height);
+
 
 // set up an grid of 3D Pixels in undulating waves
 var pixels = []; 
 
-for(var x = -1000; x<1000; x+=5) { 
-    for(var z = -1000; z<1000; z+=5) { 
+for(var x = -500; x<500; x+=5) { 
+    for(var z = -500; z<500; z+=5) { 
         var zOscillation = Math.sin(z*(Math.PI*4/500));
         var xOscillation = Math.sin((x+z)*(Math.PI*2/500));
-        var pixel = new Pixel3D(x,(zOscillation+xOscillation)*14+120,z);
+        var y = screen.width >= 768 ? ((zOscillation+xOscillation)*70+90) : (zOscillation+xOscillation)*70 + 200;
+        var pixel = new Pixel3D(x,y,z);
         pixels.push(pixel); 
     }
 }
@@ -37,7 +40,7 @@ function render() {
     // mouse position (to smooth the "camera" 
     // motion). 
     offsetX += (mouseX - offsetX)*0.1; 
-    offsetY += (mouseY - offsetY)*0.1; 
+    offsetY += (mouseY - offsetY)*0.1;
 
     
     // clear the canvas
@@ -59,11 +62,11 @@ function render() {
         // so that our 2D origin is in the middle of 
         // the screen.
         var x2d = ((pixel.x+offsetX) * scale) + halfWidth; 
-        var y2d = ((pixel.y+offsetY+30) * scale) + halfHeight; 
+        var y2d = ((pixel.y+offsetY) * scale) + halfHeight/4; 
 
         // and set that 2D pixel to be green
-      var alpha = 255-pixel.z-(0.95*255);
-        setPixel(imagedata, x2d, y2d, 77, 77, 77, alpha);
+      var alpha = 255-pixel.z-(0.65*255);
+        setPixel(imagedata, x2d, y2d, 3, 3, 3, alpha);
 
         // add 1 to the z position to bring it a little 
         // closer to the camera each frame

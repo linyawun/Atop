@@ -65,7 +65,8 @@ a {
 
 .container{
     position: relative;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
 }
 
 /*header*/
@@ -85,191 +86,90 @@ a {
 }
 
 /* main */
-.main{
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
 h2{
     font-size: 32px;
     font-weight: 700;
 }
-
-/* 綠色色塊背景 */
-.imgleft-bg{
-    position: absolute;
-    bottom: -355px; 
-    left: -190px;
-    width: 64vw;
-    height: 80vh;
-    /* width: 960px;
-    height: 600px; */
-    border-radius: 40px;
-    background-color: #8AC340;
+.main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
     transform: rotate(-45deg);
-    transition: 0.5s ease all;
-
-    animation:fadeInLeft_img;  /*referring directly to the animation's @keyframe declaration */
-    animation-duration: 1.3s;  /*don't forget to set a duration!*/
-    animation-timing-function: linear;
-  
+}
+/* 綠色色塊背景 */
+.left-block{
+    display: block;
+    position: absolute;
+    width: 60vw;
+    height: 90%;
+    top: 40vh;
+    left: -10.5vw;
+    transform: translate(0%,-50%);
+    transform-origin: bottom;
+    border: 1px solid blue;
+    border-radius: 40px;
+    overflow: hidden;
+}
+.right-block{
+    display: block;
+    position: absolute;
+    width: 60vw;
+    height: 90%;
+    top: 65vh;
+    right: -12.5vw;
+    transform: translate(0%,-50%);
+    transform-origin: bottom;
+    border: 1px solid red;
+    border-radius: 40px;
+    overflow: hidden;
+}
+.imgleft-bg{
+    width: 100%;
+    height: 100%;
+}
+.imgleft-bg::after{
 }
 
 .img-left{
-    position: absolute;
-    bottom: -300px; 
-    left: -180px;
-    width: 64vw;
-    height: 80vh;
-    /* width: 960px;
-    height: 600px; */
-    border-radius: 40px;
-    transform: rotate(-45deg); 
-    transition: 0.5s ease all;
-
-    animation:fadeInLeft_img;  /*referring directly to the animation's @keyframe declaration */
-    animation-duration: 1.3s;  /*don't forget to set a duration!*/
-    animation-timing-function: linear;
 }
 
 .hover-bg-left{
-	position: absolute;
-    border-radius: 40px;
-	width: 100%;
-	height: 100%;
-    top: 0%;
-    left: 0%;
     background:linear-gradient(to right, #8AC340 20%,rgba(255,255,255,0) 80%);
-    transition: all 1s ease;
-    opacity: 0;
 }
 
 .img-content-left{
-    position: absolute;
-	overflow: hidden;
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
 }
 .img-content-left::before{
-    content: "";
-	position: absolute;
-	width: 110%;
-	height: 110%;
-    top: -10%;
-    left: 25%;
-	z-index: -1;
-	background: url(../img/left.png);
-    background-repeat: no-repeat;
-	background-size: cover;
-	background-position:center center;
-    transform: rotate(45deg);  
-    transition: all 0.8s ease;
 }
 .img-content-left-open:before{
-    transform: scale(1.2) rotate(45deg);
 }
 
 .content-left{
-    color: #FFFFFF;
-    max-width: 446px;
-    position:absolute;
-    bottom:11vh;
-    left:8vw;
 }
 
 .imgright-bg{
-    position: absolute;
-    top: -355px;
-    right: -190px;
-    width: 64vw;
-    height: 80vh;
-    /* width: 960px;
-    height: 600px; */
-    border-radius: 40px;
-    background-color: #8AC340;
-    transform: rotate(-45deg);
-    transition: 0.5s ease all;
-
-    animation:fadeInRight_img;  /*referring directly to the animation's @keyframe declaration */
-    animation-duration: 1.3s;  /*don't forget to set a duration!*/
-    animation-timing-function: linear;
 }
 
 .img-right{
-    position: absolute;
-    top: -300px;
-    right: -180px;
-    width: 64vw;
-    height: 80vh;
-    /* width: 960px;
-    height: 600px; */
-    border-radius: 40px;
-    transform: rotate(-45deg);
-    transition: 0.5s ease all;
-    animation:fadeInRight_img;  /*referring directly to the animation's @keyframe declaration */
-    animation-duration: 1.3s;  /*don't forget to set a duration!*/
-    animation-timing-function: linear;
 }
 .hover-bg-right{
-	position: absolute;
-    border-radius: 40px;
-	width: 100%;
-	height: 100%;
-    top: 0%;
-    left: 0%;
-    background:linear-gradient(to left, #8ac340 20%,rgba(255,255,255,0) 80%);
-    transition: all 1s ease;
-    opacity: 0;
 }
 .hover-bg-open{
-    opacity: 1;
 }
 .img-content-right{
-    position: absolute;
-	overflow: hidden;
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
     
 }
 .img-content-right:before{
-    content: "";
-	position: absolute;
-	width: 110%;
-	height: 110%;
-    top: 15%;
-    left: -25%;
-	z-index: -1;
-	background: url(../img/right.png);
-    background-repeat: no-repeat;
-	background-size: cover;
-	background-position:center center;
-    transform: rotate(45deg);
-    transition: all 0.8s ease;
 }
 .img-content-right-open:before{
-    transform: scale(1.2) rotate(45deg);
 }
-
 .content-right{
-    color: #FFFFFF;
-    max-width: 568px;
-    position:absolute;
-    top:15vh;
-    right:8vw;
-    text-align:right;
 }
 .content-right p{
-    max-width: 446px;
-    margin: 0;
-    float: right;
 }
-
 .content-left p, .content-right p{
-    font-size: 1.3125em;
 }
-
 /* footer*/
 .footer{
     position: absolute;
@@ -315,6 +215,8 @@ canvas{
     position: absolute;
     top: 0;
     z-index: -1;
+}
+@media screen and (max-width: 1400px){
 }
 @media screen and (max-width: 576px){
     .footer li a{
