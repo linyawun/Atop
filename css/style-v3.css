@@ -51,6 +51,7 @@ body {
     margin:0px; 
     font-size: 16px;
     line-height: normal;
+    font-family: 'Roboto',Arial,sans-serif;
 }
 
 
@@ -258,7 +259,7 @@ h2{
     text-align:right;
 }
 .content-right p{
-    max-width: 446px;
+    max-width: 485px;
     margin: 0;
     float: right;
 }
