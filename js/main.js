@@ -9,7 +9,7 @@ function isMobile() {
 
     var mobileAgents = [ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad","iPod"];
 
-    var mobile_flag = false;
+    var mobile_flag = 0;
 
     //根据userAgent判断是否是手机
     // for (var v = 0; v < mobileAgents.length; v++) {
@@ -19,15 +19,26 @@ function isMobile() {
     //     }
     // }
 
-     var screen_width = window.screen.width;
-     var screen_height = window.screen.height;    
+    //  var screen_width = window.screen.width;
+    //  var screen_height = window.screen.height;    
+     var screen_width = window.innerWidth;
+     var screen_height = window.innerHeight;   
 
      //根据屏幕分辨率判断是否是手机
-     if(screen_width < 500 && screen_height < 800){
-         mobile_flag = true;
+     if(screen_width < 500 && screen_height < 820){
+         mobile_flag = 1;
         console.log('mobile');
      }
 
+     if(screen_width > 500 && screen_width < 820 && screen_height < 1300){
+        mobile_flag = 2;
+       console.log('tablet');
+    }
+
+     if(screen_width > 820 && screen_width < 1250 && screen_height > 1300){
+        mobile_flag = 3;
+       console.log('tablet2');
+    }
      return mobile_flag;
 }
 
@@ -35,7 +46,7 @@ function isMobile() {
 function hoverImg(){
     var mobile_flag = isMobile(); // true為手機端，false為電腦端
     
-    if(mobile_flag==false){//電腦版
+    if(mobile_flag==0){//電腦版
     //hover右側區塊
     $(".right-block").hover(function(){
         //綠色漸層
@@ -70,8 +81,6 @@ function hoverImg(){
             'top': '-300px',
             'right': '-180px'
         });
-        
-
         $(".img-left").css({
             "bottom":"-300px",
             "left":"-180px"
@@ -92,7 +101,6 @@ function hoverImg(){
         $( ".hover-bg-left" ).addClass( "hover-bg-open" );
         //放大圖片避免圖不夠大
         $( ".img-content-left" ).addClass( "img-content-left-open" ); 
-
         //區塊位移
         $(".img-right").css({
             'top': '-400px',
@@ -115,7 +123,6 @@ function hoverImg(){
         //回復原狀
         $( ".hover-bg-left" ).removeClass( "hover-bg-open" );
         $( ".img-content-left" ).removeClass( "img-content-left-open" ); 
-
         $(".img-right").css({
             'top': '-300px',
             'right': '-180px'
@@ -134,30 +141,29 @@ function hoverImg(){
         })
     });
         
-    }else if(mobile_flag==true){//手機版
+    }else if(mobile_flag==1){//手機版
         $(".right-block").hover(function(){
             //綠色漸層
             $( ".hover-bg-right" ).addClass( "hover-bg-open" ); 
             $( ".img-content-right" ).addClass( "img-content-right-open" ); 
             //區塊位移
             $(".img-right").css({
-                'top': '-8%',
+                'top': '-5%',
                 'right': '-45%'
             });
-         
             $(".img-left").css({
-                "bottom":"-19%",
-                "left":"-51%"
+                'bottom': '-31%',
+                'left': '-51%'
             });
             $(".imgright-bg").css({
-                'top': '-12%',
+                'top': '-9%',
                 'right': '-45%'
             });
             $(".imgleft-bg").css({
-                'bottom': '-23%',
+                'bottom': '-36%',
                 'left': '-51%'
             })
-    
+
         },function(){
             //回復原狀
             $( ".hover-bg-right" ).removeClass( "hover-bg-open" );
@@ -168,7 +174,7 @@ function hoverImg(){
                 'right': '-48%'
             });
             $(".img-left").css({
-                'bottom': '-16%',
+                'bottom': '-25%',
                 'left': '-48%'
             });
             $(".imgright-bg").css({
@@ -176,9 +182,8 @@ function hoverImg(){
                 'right': '-48%'
             });
             $(".imgleft-bg").css({
-                'bottom': '-20%',
+                'bottom': '-30%',
                 'left': '-48%'
-
             })
         });
     
@@ -190,19 +195,19 @@ function hoverImg(){
     
             //區塊位移
             $(".img-right").css({
-                'top': '-19%',
+                'top': '-22%',
                 'right': '-51%'
             });
             $(".img-left").css({
-                "bottom":"-8%",
+                "bottom":"-14%",
                 "left":"-45%"
             });
             $(".imgright-bg").css({
-                'top': '-23%',
+                'top': '-26%',
                 'right': '-51%'
             });
             $(".imgleft-bg").css({
-                'bottom': '-12%',
+                'bottom': '-19%',
                 'left': '-45%'
             })
     
@@ -210,13 +215,12 @@ function hoverImg(){
             //回復原狀
             $( ".hover-bg-left" ).removeClass( "hover-bg-open" );
             $( ".img-content-left" ).removeClass( "img-content-left-open" ); 
-    
             $(".img-right").css({
                 'top': '-11%',
                 'right': '-48%'
             });
             $(".img-left").css({
-                'bottom': '-16%',
+                'bottom': '-25%',
                 'left': '-48%'
             });
             $(".imgright-bg").css({
@@ -224,13 +228,196 @@ function hoverImg(){
                 'right': '-48%'
             });
             $(".imgleft-bg").css({
-                'bottom': '-20%',
+                'bottom': '-30%',
                 'left': '-48%'
-
             })
             
         });
 
-    }
+    }else if(mobile_flag==2){
+        //hover右側區塊
+        $(".right-block").hover(function(){
+            //綠色漸層
+            $( ".hover-bg-right" ).addClass( "hover-bg-open" ); 
 
+            //放大圖片避免圖不夠大
+            $( ".img-content-right" ).addClass( "img-content-right-open" ); 
+            //區塊位移
+            $(".img-right").css({
+                'top': '-170px',
+                'right': '-420px'
+            });
+            $(".img-left").css({
+                "bottom":"-250px",
+                "left":"-465px"
+            });
+            $(".imgright-bg").css({
+                'top': '-225px',
+                'right': '-420px'
+            });
+            $(".imgleft-bg").css({
+                "bottom":"-305px",
+                "left":"-465px"
+            })
+        },function(){
+            //回復原狀
+            $( ".hover-bg-right" ).removeClass( "hover-bg-open" );
+            $( ".img-content-right" ).removeClass( "img-content-right-open" ); 
+
+            $(".img-right").css({
+                'top': '-210px',
+                'right': '-440px'
+            });
+            $(".img-left").css({
+                "bottom":"-210px",
+                "left":"-445px"
+            });
+            $(".imgright-bg").css({
+                'top': '-265px',
+                'right': '-440px'
+            });
+            $(".imgleft-bg").css({
+                "bottom":"-265px",
+                "left":"-445px"
+            })
+        });
+
+        //hover左側區塊
+        $(".left-block").hover(function(){
+            //綠色漸層
+            $( ".hover-bg-left" ).addClass( "hover-bg-open" );
+            //放大圖片避免圖不夠大
+            $( ".img-content-left" ).addClass( "img-content-left-open" ); 
+            //區塊位移
+            $(".img-right").css({
+                'top': '-250px',
+                'right': '-465px'
+            });
+            $(".img-left").css({
+                "bottom":"-170px",
+                "left":"-420px"
+            });
+            $(".imgright-bg").css({
+                'top': '-305px',
+                'right': '-465px'
+            });
+            $(".imgleft-bg").css({
+                "bottom":"-225px",
+                "left":"-420px"
+            })
+
+        },function(){
+            //回復原狀
+            $( ".hover-bg-left" ).removeClass( "hover-bg-open" );
+            $( ".img-content-left" ).removeClass( "img-content-left-open" ); 
+            $(".img-right").css({
+                'top': '-210px',
+                'right': '-440px'
+            });
+            $(".img-left").css({
+                "bottom":"-210px",
+                "left":"-445px"
+            });
+            $(".imgright-bg").css({
+                'top': '-265px',
+                'right': '-440px'
+            });
+            $(".imgleft-bg").css({
+                "bottom":"-265px",
+                "left":"-445px"
+            })
+        });  
+    }else if(mobile_flag==3){
+        //hover右側區塊
+        $(".right-block").hover(function(){
+            //綠色漸層
+            $( ".hover-bg-right" ).addClass( "hover-bg-open" ); 
+            //放大圖片避免圖不夠大
+            $( ".img-content-right" ).addClass( "img-content-right-open" ); 
+            //區塊位移
+            $(".img-right").css({
+                'top': '-130px',
+                'right': '-230px'
+            });
+            $(".img-left").css({
+                "bottom":"-250px",
+                "left":"-380px"
+            });
+            $(".imgright-bg").css({
+                'top': '-185px',
+                'right': '-230px'
+            });
+            $(".imgleft-bg").css({
+                "bottom":"-305px",
+                "left":"-380px"
+            })
+        },function(){
+            //回復原狀
+            $( ".hover-bg-right" ).removeClass( "hover-bg-open" );
+            $( ".img-content-right" ).removeClass( "img-content-right-open" ); 
+
+            $(".img-right").css({
+                'top': '-230px',
+                'right': '-330px'
+            });
+            $(".img-left").css({
+                "bottom":"-200px",
+                "left":"-330px"
+            });
+            $(".imgright-bg").css({
+                'top': '-285px',
+                'right': '-330px'
+            });
+            $(".imgleft-bg").css({
+                "bottom":"-255px",
+                "left":"-330px"
+            })
+        });
+
+        //hover左側區塊
+        $(".left-block").hover(function(){
+            //綠色漸層
+            $( ".hover-bg-left" ).addClass( "hover-bg-open" );
+            //放大圖片避免圖不夠大
+            $( ".img-content-left" ).addClass( "img-content-left-open" ); 
+            //區塊位移
+            $(".img-right").css({
+                'top': '-280px',
+                'right': '-380px'
+            });
+            $(".img-left").css({
+                "bottom":"-100px",
+                "left":"-230px"
+            });
+            $(".imgright-bg").css({
+                'top': '-335px',
+                'right': '-380px'
+            });
+            $(".imgleft-bg").css({
+                "bottom":"-155px",
+                "left":"-230px"
+            })
+        },function(){
+            //回復原狀
+            $( ".hover-bg-left" ).removeClass( "hover-bg-open" );
+            $( ".img-content-left" ).removeClass( "img-content-left-open" ); 
+            $(".img-right").css({
+                'top': '-230px',
+                'right': '-330px'
+            });
+            $(".img-left").css({
+                "bottom":"-200px",
+                "left":"-330px"
+            });
+            $(".imgright-bg").css({
+                'top': '-285px',
+                'right': '-330px'
+            });
+            $(".imgleft-bg").css({
+                "bottom":"-255px",
+                "left":"-330px"
+            })
+        });  
+    }
+ 
 }
