@@ -13,7 +13,7 @@ html, body{
 }
 @media screen and (min-width: 768px){
     html, body{
-        overflow: hidden;
+        /* overflow: hidden; */
     }
 }
 .loading-screen{
@@ -60,8 +60,6 @@ html, body{
     align-items: center;
     transform: translate(-50%,-50%) scale(1.5);
     animation: scaleUpAnimation 1s linear 0.01s infinite;
-}
-@media screen and (max-width: 576px){
 }
 @-webkit-keyframes scaleUpAnimation{
     0%{

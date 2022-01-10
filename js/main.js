@@ -39,11 +39,34 @@ function isMobile() {
         mobile_flag = 3;
        console.log('tablet2');
     }
+
      return mobile_flag;
 }
 
 
+
+
 function hoverImg(){
+    var imgright = document.getElementById("img-right");
+    var imgright_top = imgright.offsetTop;
+    var imgright_right = window.innerWidth - imgright.offsetLeft - imgright.offsetWidth;
+
+    var imgrightbg = document.getElementById("imgright-bg");
+    var imgrightbg_top = imgrightbg.offsetTop;
+    var imgrightbg_right = window.innerWidth - imgrightbg.offsetLeft - imgrightbg.offsetWidth;
+
+    var imgleft = document.getElementById("img-left");
+    var imgleft_bottom = window.innerHeight - imgleft.offsetTop - imgleft.offsetHeight;
+    var imgleft_left = imgleft.offsetLeft;
+
+    var imgleftbg = document.getElementById("imgleft-bg");
+    var imgleftbg_bottom = window.innerHeight - imgleftbg.offsetTop - imgleftbg.offsetHeight;
+    var imgleftbg_left = imgleftbg.offsetLeft;
+
+    var moveL=110;
+    var moveS=100;
+
+
     var mobile_flag = isMobile(); // true為手機端，false為電腦端
     
     if(mobile_flag==0){//電腦版
@@ -56,20 +79,20 @@ function hoverImg(){
         $( ".img-content-right" ).addClass( "img-content-right-open" ); 
         //區塊位移
         $(".img-right").css({
-            'top': '-190px',
-            'right': '-70px'
+            'top': imgright_top+moveL,
+            'right': imgright_right+moveL
         });
         $(".img-left").css({
-            "bottom":"-400px",
-            "left":"-280px"
+            "bottom":imgleft_bottom-moveS,
+            "left":imgleft_left-moveS
         });
         $(".imgright-bg").css({
-            'top': '-245px',
-            'right': '-80px'
+            'top': imgrightbg_top+moveL,
+            'right': imgrightbg_right+moveL
         });
         $(".imgleft-bg").css({
-            'bottom': '-455px',
-            'left': '-290px'
+            'bottom': imgleftbg_bottom-moveS,
+            'left': imgleftbg_left-moveS
         })
 
     },function(){
@@ -78,20 +101,20 @@ function hoverImg(){
         $( ".img-content-right" ).removeClass( "img-content-right-open" ); 
 
         $(".img-right").css({
-            'top': '-300px',
-            'right': '-180px'
+            'top': imgright_top,
+            'right': imgright_right
         });
         $(".img-left").css({
-            "bottom":"-300px",
-            "left":"-180px"
+            "bottom":imgleft_bottom,
+            "left":imgleft_left
         });
         $(".imgright-bg").css({
-            'top': '-355px',
-            'right': '-190px'
+            'top': imgrightbg_top,
+            'right': imgrightbg_right
         });
         $(".imgleft-bg").css({
-            'bottom': '-355px',
-            'left': '-190px'
+            'bottom': imgleftbg_bottom,
+            'left': imgleftbg_left
         })
     });
 
@@ -103,20 +126,20 @@ function hoverImg(){
         $( ".img-content-left" ).addClass( "img-content-left-open" ); 
         //區塊位移
         $(".img-right").css({
-            'top': '-400px',
-            'right': '-280px'
+            'top': imgright_top-moveS,
+            'right': imgright_right-moveS
         });
         $(".img-left").css({
-            "bottom":"-190px",
-            "left":"-70px"
+            "bottom":imgleft_bottom+moveL, 
+            "left":imgleft_left+moveL
         });
         $(".imgright-bg").css({
-            'top': '-455px',
-            'right': '-290px'
+            'top': imgrightbg_top-moveS,
+            'right': imgrightbg_right-moveS
         });
         $(".imgleft-bg").css({
-            'bottom': '-245px',
-            'left': '-80px'
+            'bottom': imgleftbg_bottom+moveL,
+            'left': imgleftbg_left+moveL
         })
 
     },function(){
@@ -124,25 +147,26 @@ function hoverImg(){
         $( ".hover-bg-left" ).removeClass( "hover-bg-open" );
         $( ".img-content-left" ).removeClass( "img-content-left-open" ); 
         $(".img-right").css({
-            'top': '-300px',
-            'right': '-180px'
+            'top': imgright_top,
+            'right': imgright_right
         });
         $(".img-left").css({
-            "bottom":"-300px",
-            "left":"-180px"
+            "bottom":imgleft_bottom,
+            "left":imgleft_left
         });
         $(".imgright-bg").css({
-            'top': '-355px',
-            'right': '-190px'
+            'top': imgrightbg_top,
+            'right': imgrightbg_right
         });
         $(".imgleft-bg").css({
-            'bottom': '-355px',
-            'left': '-190px'
+            'bottom': imgleftbg_bottom,
+            'left': imgleftbg_left
         })
     });
         
     }else if(mobile_flag==1){//手機版
         $(".right-block").hover(function(){
+            console.log(imgright_top);
             //綠色漸層
             $( ".hover-bg-right" ).addClass( "hover-bg-open" ); 
             $( ".img-content-right" ).addClass( "img-content-right-open" ); 
@@ -337,7 +361,7 @@ function hoverImg(){
             //區塊位移
             $(".img-right").css({
                 'top': '-130px',
-                'right': '-230px'
+                'right': '-280px'
             });
             $(".img-left").css({
                 "bottom":"-250px",
