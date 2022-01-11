@@ -1,4 +1,3 @@
-let isHover = false;
 function isMobile() {
     let mobile_flag = 0;
     let screen_width = window.screen.width;
@@ -59,9 +58,6 @@ function hoverImg(){
             moveL=100;
             moveS=50;
         }
-        if(isHover) return;
-        console.log(isHover);
-        isHover = true;
         //綠色漸層
         $( ".hover-bg-right" ).addClass( "hover-bg-open" ); 
 
@@ -91,7 +87,6 @@ function hoverImg(){
         imgleft.style.cssText = '';
         imgrightbg.style.cssText = '';
         imgleftbg.style.cssText = '';
-        isHover = false;
     });
     $(".left-block").hover(function(){
         let imgright_top = imgright.offsetTop;
@@ -120,8 +115,6 @@ function hoverImg(){
             moveL=100;
             moveS=50;
         }
-        if(isHover) return;
-        isHover = true;
         $( ".hover-bg-left" ).addClass( "hover-bg-open" );
         $( ".img-content-left" ).addClass( "img-content-left-open" ); 
         $(".img-right").css({
@@ -148,7 +141,6 @@ function hoverImg(){
         imgleft.style.cssText = '';
         imgrightbg.style.cssText = '';
         imgleftbg.style.cssText = '';
-        isHover = false;
     });
  
 }
