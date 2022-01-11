@@ -928,22 +928,22 @@ canvas{
 
 /* 動畫 */
 
-  @keyframes fadeInRight_img {
+@keyframes fadeInRight_img {
     0% {
-      opacity: 0;
-      right: -100%;
+        opacity: 0;
+        right: -100%;
     }
     100% {
-      opacity: 1;
+        opacity: 1;
 
     }
-  }
-  @keyframes fadeInLeft_img {
+}
+@keyframes fadeInLeft_img {
     0% {
-      opacity: 0;
-      left: -100%;
+        opacity: 0;
+        left: -100%;
     }
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
+}
