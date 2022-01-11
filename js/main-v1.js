@@ -72,24 +72,22 @@ function hoverImg(){
         $( ".img-content-right" ).addClass( "img-content-right-open" );
         //區塊位移
         $(".img-right").css({
-            'top': imgright_top+moveL,
-            'right': imgright_right+moveS
+            'top': -190,
+            'right': -80
         });
         $(".img-left").css({
-            "bottom":imgleft_bottom-moveL,
-            "left":imgleft_left-moveS
+            "bottom": -410,
+            "left": -280
         });
         $(".imgright-bg").css({
-            'top': imgrightbg_top+moveL,
-            'right': imgrightbg_right+moveS
+            'top': -244,
+            'right': -90
         });
         $(".imgleft-bg").css({
-            'bottom': imgleftbg_bottom-moveL,
-            'left': imgleftbg_left-moveS
-        })
-
+            'bottom': -410,
+            'left': -280
+        });
     },function(){
-        //回復原狀
         $( ".hover-bg-right" ).removeClass( "hover-bg-open" );
         $( ".img-content-right" ).removeClass( "img-content-right-open" ); 
         imgright.style.cssText = '';
@@ -126,28 +124,25 @@ function hoverImg(){
         }
         //綠色漸層
         $( ".hover-bg-left" ).addClass( "hover-bg-open" );
-        //放大圖片避免圖不夠大
         $( ".img-content-left" ).addClass( "img-content-left-open" ); 
-        //區塊位移
         $(".img-right").css({
-            'top': imgright_top-moveL,
-            'right': imgright_right-moveS
+            'top': -410,
+            'right': -280
         });
         $(".img-left").css({
-            "bottom":imgleft_bottom+moveL, 
-            "left":imgleft_left+moveS
+            "bottom": -190, 
+            "left": -80,
         });
         $(".imgright-bg").css({
-            'top': imgrightbg_top-moveL,
-            'right': imgrightbg_right-moveS
+            'top': -465,
+            'right': -290
         });
         $(".imgleft-bg").css({
-            'bottom': imgleftbg_bottom+moveL,
-            'left': imgleftbg_left+moveS
-        })
-
+            'bottom': -245,
+            'left': -90
+        });
+        console.log(imgrightbg_top-moveL, imgrightbg_right-moveS, imgleftbg_bottom+moveL, imgleftbg_left+moveS);
     },function(){
-        //回復原狀
         $( ".hover-bg-left" ).removeClass( "hover-bg-open" );
         $( ".img-content-left" ).removeClass( "img-content-left-open" ); 
         imgright.style.cssText = '';
