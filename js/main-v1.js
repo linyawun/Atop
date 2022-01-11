@@ -72,20 +72,20 @@ function hoverImg(){
         $( ".img-content-right" ).addClass( "img-content-right-open" );
         //區塊位移
         $(".img-right").css({
-            'top': -190,
-            'right': -80
+            'top': imgright_top+moveL,
+            'right': imgright_right+moveS
         });
         $(".img-left").css({
-            "bottom": -410,
-            "left": -280
+            "bottom":imgleft_bottom-moveL,
+            "left":imgleft_left-moveS
         });
         $(".imgright-bg").css({
-            'top': -244,
-            'right': -90
+            'top': imgrightbg_top+moveL,
+            'right': imgrightbg_right+moveS
         });
         $(".imgleft-bg").css({
-            'bottom': -410,
-            'left': -280
+            'bottom': imgleftbg_bottom-moveL,
+            'left': imgleftbg_left-moveS
         });
     },function(){
         $( ".hover-bg-right" ).removeClass( "hover-bg-open" );
@@ -126,22 +126,21 @@ function hoverImg(){
         $( ".hover-bg-left" ).addClass( "hover-bg-open" );
         $( ".img-content-left" ).addClass( "img-content-left-open" ); 
         $(".img-right").css({
-            'top': -410,
-            'right': -280
+            'top': imgright_top-moveL,
+            'right': imgright_right-moveS
         });
         $(".img-left").css({
-            "bottom": -190, 
-            "left": -80,
+            "bottom":imgleft_bottom+moveL, 
+            "left":imgleft_left+moveS
         });
         $(".imgright-bg").css({
-            'top': -465,
-            'right': -290
+            'top': imgrightbg_top-moveL,
+            'right': imgrightbg_right-moveS
         });
         $(".imgleft-bg").css({
-            'bottom': -245,
-            'left': -90
+            'bottom': imgleftbg_bottom+moveL,
+            'left': imgleftbg_left+moveS
         });
-        console.log(imgrightbg_top-moveL, imgrightbg_right-moveS, imgleftbg_bottom+moveL, imgleftbg_left+moveS);
     },function(){
         $( ".hover-bg-left" ).removeClass( "hover-bg-open" );
         $( ".img-content-left" ).removeClass( "img-content-left-open" ); 
