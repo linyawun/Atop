@@ -62,7 +62,8 @@ function hoverImg(){
     
         let imgleftbg_bottom = main.offsetHeight - imgleftbg.offsetTop - imgleftbg.offsetHeight;
         let imgleftbg_left = imgleftbg.offsetLeft;
-        if(Math.abs(imgright_top - c_imgright_top) > 15){
+        if(Math.abs(imgright_top - c_imgright_top) > 110){
+            console.log(Math.abs(imgright_top - c_imgright_top));
             return;
         }
         //綠色漸層
@@ -119,7 +120,7 @@ function hoverImg(){
         let imgleft_left = imgleft.offsetLeft;
         let imgleftbg_bottom = main.offsetHeight - imgleftbg.offsetTop - imgleftbg.offsetHeight;
         let imgleftbg_left = imgleftbg.offsetLeft;
-        if(Math.abs(imgright_top - c_imgright_top) > 15){
+        if(Math.abs(imgright_top - c_imgright_top) > 110){
             return;
         }
         //綠色漸層
