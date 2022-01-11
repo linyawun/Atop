@@ -344,6 +344,10 @@ canvas{
         .img-left,.imgleft-bg,.img-right,.imgright-bg{
             height: 690px;
         }
+        .img-content-left:before{
+            top: -20%;
+            left: 11%;
+         }
     }
 }
 @media screen and (max-width: 1600px){
@@ -369,6 +373,7 @@ canvas{
             width: 67vw;
             height: 85vh;
         }
+       
         
     }
     @media screen and (max-height: 730px){
@@ -644,6 +649,10 @@ canvas{
             right: -460px;
             top: -205px;
         }
+        .content-right{
+            max-width: 230px;
+            /* margin-top: 16px; */
+        } 
     }
     @media screen and (max-height: 754px){
         .img-left,.imgleft-bg,.img-right,.imgright-bg{
@@ -655,6 +664,13 @@ canvas{
         }
     }
 }
+/* @media screen and (min-width: 576px){
+    @media screen and (max-width: 768px){
+        .content-right{
+            max-width: 240px;
+        } 
+    }
+} */
 @media screen and (max-width: 570px){
     .container{
         min-width: 375px;
@@ -743,7 +759,7 @@ canvas{
         border-radius: 25px;
     }
     .content-right{
-        max-width: 270px;
+        max-width: 250px;
         top: 40px;
         right: 12px;
         text-align:right;
@@ -816,11 +832,11 @@ canvas{
     .img-content-left:before{
         width: 135%;
         height: 135%;
-        top: 2%;
-        left: 21%;
+        top: -4%;
+        left: 16%;
     }
     .content-left{
-        margin-bottom: 30px;
+        margin-bottom: 8px;
     }
     .content-right{
         margin-top: 30px;
@@ -840,7 +856,7 @@ canvas{
             width: 137%;
             height: 137%;
             top: -6%;
-            left: 19%;
+            left: 18%;
         }
         .img-right,.imgright-bg{
             width: 430px;
@@ -880,7 +896,7 @@ canvas{
         width: 142%;
         height: 142%;
         top: -10%;
-        left: 18%;
+        left: 15%;
     }
 }
 
