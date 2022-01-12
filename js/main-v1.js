@@ -32,9 +32,9 @@ function hoverImg(){
     let moveS=100;
     // constants
     let c_imgright_top = imgright.offsetTop;
-    let c_imgrightbg_top = imgrightbg.offsetTop;
-    let c_imgleft_left = imgleft.offsetLeft;
-    let c_imgleftbg_left = imgleftbg.offsetLeft;
+    window.onresize = () => {
+        c_imgright_top = imgright.offsetTop;
+    }
     //hover右側區塊
     $(".right-block").hover(function(){
         let mobile_flag = isMobile(); // true為手機端，false為電腦端
